@@ -88,7 +88,7 @@ define(function(require, exports) {
           route[method].apply(context, [options.url]);
 
           // Wait for the promise to resolve before continuing.
-          context.promise.then(function(code, data) {
+          context.promise.always(function(code, data) {
             // A timeout is useful for testing behavior that may require an
             // abort or simulating how slow requests will show up to an end
             // user.
