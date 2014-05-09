@@ -1,0 +1,22 @@
+{
+  "name": "mocks-amd-loader",
+  "version": "0.1.3",
+  "description": "An AMD plugin to mock requests using jQuery.ajaxFilter.",
+  "main": "loader.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "istanbul cover _mocha -- -r test/runner test/lib/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbranyen/mocks-amd-loader.git"
+  },
+  "author": "Tim Branyen (@tbranyen)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbranyen/mocks-amd-loader/issues"
+  },
+  "homepage": "https://github.com/tbranyen/mocks-amd-loader"
+}

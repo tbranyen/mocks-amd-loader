@@ -7,7 +7,8 @@ define(function(require, exports) {
   var defaults = {
     // @route is the template, @url is URL to be tested.
     testRoute: function(route, url) {
-      return route === url;
+      // Only test the first part of the url.
+      return route === url.split("?")[0];
     },
 
     // Set 404 timeout to simulate real-world delay.
@@ -75,11 +76,11 @@ define(function(require, exports) {
           // Ensure captures is an array and not null
           captures = captures || [];
 
-          // Set the context to contain references to the Vetebrae instance and
-          // the jqXHR object.
+					// Set the context to contain references to the mocks instance and
+					// the jqXHR object.
           context = {
             jqXHR: jqXHR,
-            params: options.data,
+            params: options.data || options.url.split("?")[1] || "",
             promise: new $.Deferred()
           };
 

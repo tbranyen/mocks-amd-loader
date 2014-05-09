@@ -1,0 +1,10 @@
+{
+  "name": "mocks-amd-loader",
+  "version": "0.1.3",
+  "description": "An AMD plugin to mock requests using jQuery.ajaxFilter.",
+  "main": "loader.js",
+  "author": "Tim Branyen (@tbranyen)",
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
+}
