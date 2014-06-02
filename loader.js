@@ -15,7 +15,7 @@ define(function(require, exports) {
      * @return {boolean} Whether or not hte url matches the route template.
      */
     testRoute: function(route, url) {
-      return Boolean(route).parse(url.split("?")[1]));
+      return Boolean(route.parse(url.split("?")[1]));
     },
 
     // Set 404 timeout to simulate real-world delay.
