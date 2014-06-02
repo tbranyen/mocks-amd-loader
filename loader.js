@@ -15,7 +15,7 @@ define(function(require, exports) {
      * @return {boolean} Whether or not hte url matches the route template.
      */
     testRoute: function(route, url) {
-      return Boolean(route.parse(url.split("?")[1]));
+      return Boolean(route.parse(url.split("?")[0]));
     },
 
     // Set 404 timeout to simulate real-world delay.
@@ -87,7 +87,7 @@ define(function(require, exports) {
         context = {
           jqXHR: jqXHR,
           qs: options.data || options.url.split("?")[1] || "",
-          params: template.parse(options.url.split("?")[1] || ""),
+          params: template.parse(options.url.split("?")[0] || ""),
           promise: new $.Deferred()
         };
 
