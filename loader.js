@@ -133,9 +133,11 @@ define(function(require, exports) {
     // Require the mock request handlers.
     require([name + "/handlers"], function(handlers) {
       // Set up the data.
-      Object.keys(handlers).forEach(function(endpoint) {
+      for (var endpoint in handlers) {
+        if (!handlers.hasOwnProperty(endpoint)) { continue; }
+
         _routes[endpoint] = handlers[endpoint];
-      });
+      }
 
       load(handlers);
     });
