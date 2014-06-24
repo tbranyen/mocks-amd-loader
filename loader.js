@@ -30,13 +30,16 @@ define(function(require, exports) {
   // Cache internally all future defined routes.
   var _routes = {};
 
+  // If jQuery doesn't exist, we're in a build and should NOP.
+  var ajaxTransport = $ ? $.ajaxTransport : function() {};
+
   /**
    * Adding transports in jQuery will push them to the end of the stack for
    * filtering.  Without the + preceding the wildcard *, most requests would
    * still be handled by jQuery's internal transports.  With the +, this
    * catch-all transport is bumped to the front and hijacks *ALL* requests.
    */
-  $.ajaxTransport("+*", function(options, originalOptions, jqXHR) {
+  ajaxTransport("+*", function(options, originalOptions, jqXHR) {
     var timeout, captures, match, route, template;
     var method = options.type.toUpperCase();
 
